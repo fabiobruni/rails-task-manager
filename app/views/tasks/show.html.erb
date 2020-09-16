@@ -1,0 +1,39 @@
+<div class="container">
+  <h1>Info about a Task</h1>
+
+  <p>Task: <%= @task.title %></p>
+  <p>Details: <%= @task.details %></p>
+
+  <% if @task.completed %>
+    <i class="far fa-check-square"></i> This is done!
+  <% else %>
+    <i class="far fa-square"></i> This is NOT done!
+  <% end %>
+
+  <p>
+    <%= link_to 'All Tasks', tasks_path %>
+  </p>
+
+  <p>
+    <%= link_to 'Edit this Task', edit_task_path(@task) %>
+  </p>
+
+  <p>
+    <%= link_to 'Remove this Task', task_path(@task), method: :delete, data: { confirm: 'Hands up! Are you really done with this task?' } %>
+  </p>
+
+
+
+
+</div>
+
+
+
+
+<%# <p>Completed: <%= check_box("task", task.id, {checked: task.completed})</p> %>
+
+ <%# <p>
+    <%= f.label :completed %>
+    <%#= f.check_box :completed %>
+
+
